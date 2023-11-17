@@ -542,14 +542,14 @@ void SmartmicroRadarNode::mode_response(
     for (auto & resp : myResp_1) {
       response_type = resp->GetResponseType();
       RCLCPP_INFO(
-        this->get_logger(), "Response from '%s' : %i", instruction_name.c_str(), response_type);
+        this->get_logger(), "Response from '%s' : %li", instruction_name.c_str(), response_type);
     }
   }
   if (response->GetResponse<float>("auto_interface_0dim", instruction_name.c_str(), myResp_2)) {
     for (auto & resp : myResp_2) {
       response_type = resp->GetResponseType();
       RCLCPP_INFO(
-        this->get_logger(), "Response from '%s' : %i", instruction_name.c_str(), response_type);
+        this->get_logger(), "Response from '%s' : %li", instruction_name.c_str(), response_type);
     }
   }
 }
@@ -562,7 +562,7 @@ void SmartmicroRadarNode::sensor_response_ip(
   if (response->GetResponse<uint32_t>("auto_interface_0dim", "ip_source_address", myResp_2)) {
     for (auto & resp : myResp_2) {
       response_type = resp->GetResponseType();
-      RCLCPP_INFO(this->get_logger(), "Response from sensor for ip change: %i", response_type);
+      RCLCPP_INFO(this->get_logger(), "Response from sensor for ip change: %li", response_type);
     }
   }
 }
@@ -576,7 +576,7 @@ void SmartmicroRadarNode::command_response(
         "auto_interface_command", command_name.c_str(), command_resp)) {
     for (auto & resp : command_resp) {
       response_type = resp->GetResponseType();
-      RCLCPP_INFO(this->get_logger(), "Response from sensor to command: %i", response_type);
+      RCLCPP_INFO(this->get_logger(), "Response from sensor to command: %li", response_type);
     }
   }
 }
